@@ -30,27 +30,27 @@ mysqli_close($link);
 </head>
 <body>
 
-<div class="col-md-8 col-md-offset-2">
+<div style="top:10px;" class="col-md-8 col-md-offset-2">
 <form name="" id="" method="POST" action="" />
-<h1 style="text-align: center;">Pesquisa de ramais
     <a href="cadastro_ramal.php" class="btn btn-primary pull-right menu"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;Novo ramal</a>
-</h1>
 </div>
 
-<div class="col-md-8 col-md-offset-2"> 
+<div style="top:25px;" class="col-md-8 col-md-offset-2"> 
 <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
         <tr>
             <th align='center' bgColor='#666666'><font color='#FFF'>Nome do ramal</th>
             <th align='center' bgColor='#666666'><font color='#FFF'>Ramal</th>
+            <th width ="60" align='center' bgColor='#666666'><font color='#FFF'>Ação</th>
             </tr>
         </thead>
         <tbody>
         </tbody>
         <tfoot>
         <tr>
-            <th width='220' align='center' valign='middle' bgColor='#DDDDDD'>Nome do ramal</th>
-            <th width='120' align='center' valign='middle' bgColor='#DDDDDD'>Ramal</th>
+            <th align='center' valign='middle' bgColor='#DDDDDD'>Nome do ramal</th>
+            <th align='center' valign='middle' bgColor='#DDDDDD'>Ramal</th>
+            <th align='center' valign='middle' bgColor='#DDDDDD'>Ação</th>
             </tr>
         </tfoot>
     </table>      

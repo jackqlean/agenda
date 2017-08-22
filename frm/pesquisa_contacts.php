@@ -28,18 +28,20 @@ mysqli_close($link);
   <script src="../lib/js/jquery.dataTables.min.js"></script>
   <script src="../lib/js/dataTables.bootstrap.min.js"></script>          
   <script src="../lib/js/bootstrap.js"></script>
-  
+  <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip(); 
+    });
+    </script> 
 </head>
 <body>
 
-<div class="col-md-8 col-md-offset-2">
+<div style="top:10px;" class="col-md-8 col-md-offset-2">
 <form name="" id="" method="POST" action="" />
-<h1 style="text-align: center;">Pesquisa de Contatos
     <a href="cadastro_contact.php" class="btn btn-primary pull-right menu"><i class="fa fa-address-book-o" aria-hidden="true"></i>&nbsp;Novo contato</a>
-</h1>
 </div>
 
-<div class="col-md-8 col-md-offset-2"> 
+<div style="top:25px;" class="col-md-8 col-md-offset-2"> 
 <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
         <tr>
@@ -48,7 +50,8 @@ mysqli_close($link);
             <th align='center' bgColor='#666666'><font color='#FFF'>Celular</th>
             <th align='center' bgColor='#666666'><font color='#FFF'>Recados</th>
             <th align='center' bgColor='#666666'><font color='#FFF'>Observação</th>
-            <th align='center' bgColor='#666666'><font color='#FFF'>Email</th>               
+            <th align='center' bgColor='#666666'><font color='#FFF'>Email</th>
+            <th width="60" align='center' bgColor='#666666'><font color='#FFF'>Ação</th>   
             </tr>
         </thead>
         <tbody>
@@ -60,8 +63,10 @@ mysqli_close($link);
             <th align='center' valign='middle' bgColor='#DDDDDD'>Celular</th>
             <th align='center' valign='middle' bgColor='#DDDDDD'>Recados</th>
             <th align='center' valign='middle' bgColor='#DDDDDD'>Observação</th>  
-            <th align='center' valign='middle' bgColor='#DDDDDD'>Email</th>              
+            <th align='center' valign='middle' bgColor='#DDDDDD'>Email</th>
+            <th align='center' valign='middle' bgColor='#DDDDDD'>Ação</th>
             </tr>
+
         </tfoot>
     </table>    	
 </div>

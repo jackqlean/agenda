@@ -5,9 +5,14 @@
 	$tabela = "";
 	while($row = mysqli_fetch_array($reg)){
 				
+		$editar = '<a href=\"alteracao_ramal.php?id='.$row['id'].'\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Editar\" class=\"btn btn-primary\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></a>';
+		$eliminar = '<a href=\"../op/deletar_ramal.php?id='.$row['id'].'\" onclick=\"return confirm(\'Deseja excluir este ramal?\')\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Eliminar\" class=\"btn btn-danger\"><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></a>';
+
 		$tabela.='{
+				  "id":"'.$row['id'].'",
 				  "nome":"'.$row['name'].'",
-				  "ramal":"'.$row['ramal'].'"
+				  "ramal":"'.$row['ramal'].'",
+				  "acao":"'.$editar.$eliminar.'"
 				  },';		
 	}	
 
