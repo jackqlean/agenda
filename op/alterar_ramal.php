@@ -25,7 +25,7 @@ require_once "../config/init.php";
 
 $id = $_GET["id"];
 
-$sql = "UPDATE `phonext` SET `name` = '".$_POST["txtNome"]."', `ramal` = '".$_POST["txtRamal"]."' WHERE `id` = ".$id."";
+$sql = "UPDATE `phonext` SET `name` = '".$_POST["txtNome"]."', `ramal` = '".$_POST["txtRamal"]."', `local` = '".$_POST["txtLocal"]."' WHERE `id` = ".$id."";
 		
 		if (mysqli_query($link, $sql)) {
     

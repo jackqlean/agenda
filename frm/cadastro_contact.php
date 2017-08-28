@@ -29,19 +29,33 @@
   <input id="txtNome" name="txtNome" type="text" value="" placeholder="Digite o nome do contato" class="inputUnico form-control input-md" required="">
   </div>
 </div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="txtTipo">Tipo</label>  
+  <div class="col-md-5">
+  <select name="txtTipo" id="txtTipo" class="inputUnico form-control input-md" />
+        <option>Selecione...</option>
+        <option value="O">OUTROS</option>
+        <option value="P">PENSIONISTA</option>
+        <option value="I">INATIVO</option>
+        <option value="A">ATIVO</option>
+        </select>
+ </div>
+</div>
+
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="txtTel">Telefone</label>
+  <label class="col-md-4 control-label" for="txtTel">Telefone 1</label>
   <div class="col-md-5">
-    <input type="text" name="txtTel" id="txtTel" value="" placeholder="Digite o número do telefone" class="inputUnico form-control input-md" onkeypress="return txtBoxFormat(this, '(##)####-####', event);"/ maxlength="13" required="">
+    <input type="text" name="txtTel1" id="txtTel1" value="" placeholder="Digite o número do telefone" class="inputUnico form-control input-md" onkeypress="return txtBoxFormat(this, '(##)####-####', event);"/ maxlength="13" required="">
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="txtCel">Celular</label>
+  <label class="col-md-4 control-label" for="txtCel">Telefone 2</label>
   <div class="col-md-5">
-    <input type="text" name="txtCel" id="txtCel" value="" placeholder="Digite o número do celular" class="inputUnico form-control input-md" onkeypress="return txtBoxFormat(this, '(##)#####-####', event);" maxlength="14"/>
+    <input type="text" name="txtTel2" id="txtTel2" value="" placeholder="Digite o número do telefone" class="inputUnico form-control input-md" onkeypress="return txtBoxFormat(this, '(##)####-####', event);" maxlength="13"/>
   </div>
 </div>
 
@@ -63,9 +77,9 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="txtDescricao">Descrição</label>  
+  <label class="col-md-4 control-label" for="txtDescricao">Observação</label>  
   <div class="col-md-5">
-  <textarea name="txtDescricao" id="txtDescricao" placeholder="Preencha com a descrição aqui" class="inputUnico form-control input-md"></textarea>
+  <textarea name="txtObservacao" id="txtObservacao" placeholder="Preencha com a observação aqui" class="inputUnico form-control input-md"></textarea>
   </div>
 </div>
 

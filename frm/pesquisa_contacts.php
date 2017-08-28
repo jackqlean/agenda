@@ -46,8 +46,9 @@ mysqli_close($link);
         <thead>
         <tr>
             <th align='center' bgColor='#666666'><font color='#FFF'>Nome</th>
+            <th align='center' bgColor='#666666'><font color='#FFF'>Tipo</th>
             <th align='center' bgColor='#666666'><font color='#FFF'>Telefone</th>
-            <th align='center' bgColor='#666666'><font color='#FFF'>Celular</th>
+            <th align='center' bgColor='#666666'><font color='#FFF'>Telefone2</th>
             <th align='center' bgColor='#666666'><font color='#FFF'>Recados</th>
             <th align='center' bgColor='#666666'><font color='#FFF'>Observação</th>
             <th align='center' bgColor='#666666'><font color='#FFF'>Email</th>
@@ -58,10 +59,11 @@ mysqli_close($link);
         </tbody>
         <tfoot>
         <tr>
-            <th align='center' valign='middle' bgColor='#DDDDDD'>Nome</th>
-            <th align='center' valign='middle' bgColor='#DDDDDD'>Telefone</th>
-            <th align='center' valign='middle' bgColor='#DDDDDD'>Celular</th>
-            <th align='center' valign='middle' bgColor='#DDDDDD'>Recados</th>
+            <th width = '120' align='center' valign='middle' bgColor='#DDDDDD'>Nome</th>
+            <th align='center' valign='middle' bgColor='#DDDDDD'>Tipo</th>
+            <th width = '120' align='center' valign='middle' bgColor='#DDDDDD'>Telefone</th>
+            <th width = '120' align='center' valign='middle' bgColor='#DDDDDD'>Telefone2</th>
+            <th width = '120' align='center' valign='middle' bgColor='#DDDDDD'>Recados</th>
             <th align='center' valign='middle' bgColor='#DDDDDD'>Observação</th>  
             <th align='center' valign='middle' bgColor='#DDDDDD'>Email</th>
             <th align='center' valign='middle' bgColor='#DDDDDD'>Ação</th>

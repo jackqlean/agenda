@@ -24,7 +24,7 @@ error_reporting(E_ALL);
 require_once "../config/init.php";
 /*require_once "../config/functions.php";*/
 
-$sql = "INSERT INTO phonext (name, ramal) VALUES('".$_POST["txtNome"]."','".$_POST["txtRamal"]."')";
+$sql = "INSERT INTO phonext (name, ramal, local) VALUES('".$_POST["txtNome"]."','".$_POST["txtRamal"]."','".$_POST["txtLocal"]."')";
 		
 		if (mysqli_query($link, $sql)) {
     

@@ -24,7 +24,7 @@ error_reporting(E_ALL);
 require_once "../config/init.php";
 /*require_once "../config/functions.php";*/
 
-$sql = "INSERT INTO contacts (name, phone, cel01, cel02, email, obs) VALUES('".$_POST["txtNome"]."','".$_POST["txtTel"]."','".$_POST["txtCel"]."','".$_POST["txtRec"]."','".$_POST["txtEmail"]."','".$_POST["txtDescricao"]."')";
+$sql = "INSERT INTO contacts (name, type, phone, phone2, rec, email, obs) VALUES('".$_POST["txtNome"]."','".$_POST["txtTipo"]."' ,'".$_POST["txtTel1"]."','".$_POST["txtTel2"]."','".$_POST["txtRec"]."','".$_POST["txtEmail"]."','".$_POST["txtObservacao"]."')";
 		
 		if (mysqli_query($link, $sql)) {
     

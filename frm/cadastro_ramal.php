@@ -37,6 +37,18 @@
   </div>
 </div>
 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="txtLocal">Local</label>  
+  <div class="col-md-5">
+  <select name="txtLocal" id="txtLocal" class="inputUnico form-control input-md" />
+        <option>Selecione...</option>
+        <option value="P">PREFEITURA</option>
+        <option value="C">CAMARA MUNICIPAL</option>
+        <option value="O">OMSS</option>
+        </select>
+ </div>
+</div>
+
 <!-- Button (Double) -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="btnEnviar"></label>

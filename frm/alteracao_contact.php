@@ -26,8 +26,16 @@ require_once "../config/init.php";
 
 $sql_query = mysqli_query($link,"SELECT * FROM contacts WHERE id = '".$id."'");
 
-//Fecha a conexão com o servidor para poupar recursos de processamento
+$sql2_query = mysqli_query($link,"SELECT * FROM tipo");
+
+$sql3_query = mysqli_query($link,"SELECT c.type FROM contacts c WHERE id = '".$id."'");
+
+$row = mysqli_fetch_array($sql3_query);
+$type = $row["type"];
+
 mysqli_close($link);
+//Fecha a conexão com o servidor para poupar recursos de processamento
+
 ?>
 
 <div class="page-header">
@@ -36,8 +44,9 @@ mysqli_close($link);
 
 <form class name="cadastro" id="cadastro" method="POST" action="../op/alterar_contact.php?id=<?php echo $id ?>" >
 <fieldset>
-
-<?php while ($linha = mysqli_fetch_array($sql_query)) { ?>
+<?php while ($linha = mysqli_fetch_array($sql_query)) 
+  
+{ ?>
 
 <!-- Text input-->
 <div class="form-group">
@@ -46,19 +55,42 @@ mysqli_close($link);
   <input id="txtNome" name="txtNome" type="text" value="<?php echo $linha["name"] ?>" placeholder="Digite o nome do contato" class="inputUnico form-control input-md" required="">
   </div>
 </div>
+
+<div class="form-group" >
+  <label class="col-md-4 control-label" for="txtTipo">Tipo</label>  
+  <div class="col-md-5">
+    <select name="txtTipo" id="txtTipo" class="form-control">
+  <?php 
+      while ($array = mysqli_fetch_array($sql2_query)) { 
+       
+       $select = $type == $array["type"] ? "selected" : "";
+
+       if ($array["type"]=='O') $tipo = "OUTROS";
+       if ($array["type"]=='A') $tipo = "ATIVO";
+       if ($array["type"]=='I') $tipo = "INATIVO";
+       if ($array["type"]=='P') $tipo = "PENSIONISTA";
+            
+      ?>
+      <?php
+      echo "<option value=\"". $array["type"] . "\" $select>" . $tipo . "</option>";
+      ?>     
+      <?php } ?>
+      </select>
+    </div>
+</div>
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="txtTel">Telefone</label>
   <div class="col-md-5">
-    <input type="text" name="txtTel" id="txtTel" value="<?php echo $linha["phone"] ?>" placeholder="Digite o número do telefone" class="inputUnico form-control input-md" onkeypress="return txtBoxFormat(this, '(##)####-####', event);"/ maxlength="13" required="">
+    <input type="text" name="txtTel1" id="txtTel1" value="<?php echo $linha["phone"] ?>" placeholder="Digite o número do telefone" class="inputUnico form-control input-md" onkeypress="return txtBoxFormat(this, '(##)####-####', event);"/ maxlength="13" required="">
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="txtCel">Celular</label>
+  <label class="col-md-4 control-label" for="txtCel">Telefone2</label>
   <div class="col-md-5">
-    <input type="text" name="txtCel" id="txtCel" value="<?php echo $linha["cel01"] ?>" placeholder="Digite o número do celular" class="inputUnico form-control input-md" onkeypress="return txtBoxFormat(this, '(##)#####-####', event);" maxlength="14"/>
+    <input type="text" name="txtTel2" id="txtTel2" value="<?php echo $linha["phone2"] ?>" placeholder="Digite o número do telefone" class="inputUnico form-control input-md" onkeypress="return txtBoxFormat(this, '(##)####-####', event);" maxlength="13"/>
   </div>
 </div>
 
@@ -66,7 +98,7 @@ mysqli_close($link);
 <div class="form-group">
   <label class="col-md-4 control-label" for="txtRec">Recados</label>
   <div class="col-md-5">
-    <input type="text" name="txtRec" id="txtRec" value="<?php echo $linha["cel02"] ?>" placeholder="Digite o número do recado" class="inputUnico form-control input-md" onkeypress="return txtBoxFormat(this, '(##)#####-####', event);" maxlength="14" />
+    <input type="text" name="txtRec" id="txtRec" value="<?php echo $linha["rec"] ?>" placeholder="Digite o número do recado" class="inputUnico form-control input-md" onkeypress="return txtBoxFormat(this, '(##)#####-####', event);" maxlength="14" />
   </div>
 </div>
 
@@ -80,9 +112,9 @@ mysqli_close($link);
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="txtDescricao">Descrição</label>  
+  <label class="col-md-4 control-label" for="txtDescricao">Observação</label>  
   <div class="col-md-5">
-  <textarea name="txtDescricao" id="txtDescricao" placeholder="Preencha com a descrição aqui" class="inputUnico form-control input-md"><?php echo $linha["obs"]?></textarea>
+  <textarea name="txtObservacao" id="txtObservacao" placeholder="Preencha com a observação aqui" class="inputUnico form-control input-md"><?php echo $linha["obs"]?></textarea>
   </div>
 </div>
 <?php } ?>

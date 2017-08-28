@@ -20,38 +20,44 @@ USE `agenda`;
 CREATE TABLE IF NOT EXISTS `contacts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT '0',
+  `type` char(1) DEFAULT '0',
   `phone` varchar(14) DEFAULT '0',
-  `cel01` varchar(14) DEFAULT '0',
-  `cel02` varchar(14) DEFAULT '0',
+  `phone2` varchar(14) DEFAULT '0',
+  `rec` varchar(14) DEFAULT '0',
   `email` varchar(50) DEFAULT '0',
   `obs` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela agenda.contacts: ~2 rows (aproximadamente)
-/*!40000 ALTER TABLE `contacts` DISABLE KEYS */;
-INSERT INTO `contacts` (`id`, `name`, `phone`, `cel01`, `cel02`, `email`, `obs`) VALUES
-	(8, 'Maria das dores', '(13)9915-0532', '(13)98224-9408', '(13)98180-5044', 'mariadasdores@gmail.com', 'Qualquer coisa ...');
-INSERT INTO `contacts` (`id`, `name`, `phone`, `cel01`, `cel02`, `email`, `obs`) VALUES
-	(9, 'Eloy Claro Silva e Souza', '(13)9915-0532', '(13)98224-9408', '(13)98180-5044', 'eloy@gmail.com', 'Qualquer observação.');
-/*!40000 ALTER TABLE `contacts` ENABLE KEYS */;
+-- Exportação de dados foi desmarcado.
+-- Copiando estrutura para tabela agenda.local
+CREATE TABLE IF NOT EXISTS `local` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `local` char(1) DEFAULT '0',
+  `descricao` varchar(50) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
+-- Exportação de dados foi desmarcado.
 -- Copiando estrutura para tabela agenda.phonext
 CREATE TABLE IF NOT EXISTS `phonext` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT '0',
   `ramal` varchar(5) DEFAULT '0',
+  `local` char(1) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela agenda.phonext: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `phonext` DISABLE KEYS */;
-INSERT INTO `phonext` (`id`, `name`, `ramal`) VALUES
-	(1, 'Jack - TI ', '24');
-INSERT INTO `phonext` (`id`, `name`, `ramal`) VALUES
-	(2, 'Eloy', '26');
-/*!40000 ALTER TABLE `phonext` ENABLE KEYS */;
+-- Exportação de dados foi desmarcado.
+-- Copiando estrutura para tabela agenda.tipo
+CREATE TABLE IF NOT EXISTS `tipo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` char(1) DEFAULT '0',
+  `descricao` varchar(50) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
+-- Exportação de dados foi desmarcado.
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

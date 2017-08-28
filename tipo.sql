@@ -11,34 +11,25 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-
--- Copiando estrutura do banco de dados para agenda
-CREATE DATABASE IF NOT EXISTS `agenda` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `agenda`;
-
--- Copiando estrutura para tabela agenda.contacts
-CREATE TABLE IF NOT EXISTS `contacts` (
+-- Copiando estrutura para tabela agenda.tipo
+CREATE TABLE IF NOT EXISTS `tipo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) DEFAULT '0',
-  `phone` varchar(14) DEFAULT '0',
-  `cel01` varchar(14) DEFAULT '0',
-  `cel02` varchar(14) DEFAULT '0',
-  `email` varchar(50) DEFAULT '0',
-  `obs` text,
+  `type` char(1) DEFAULT '0',
+  `descricao` varchar(50) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
-/*!40000 ALTER TABLE `contacts` ENABLE KEYS */;
-
--- Copiando estrutura para tabela agenda.phonext
-CREATE TABLE IF NOT EXISTS `phonext` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) DEFAULT '0',
-  `ramal` varchar(5) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
-/*!40000 ALTER TABLE `phonext` ENABLE KEYS */;
+-- Copiando dados para a tabela agenda.tipo: ~4 rows (aproximadamente)
+/*!40000 ALTER TABLE `tipo` DISABLE KEYS */;
+INSERT INTO `tipo` (`id`, `type`, `descricao`) VALUES
+	(1, 'O', 'OUTROS\r\n');
+INSERT INTO `tipo` (`id`, `type`, `descricao`) VALUES
+	(2, 'A', 'ATIVOS');
+INSERT INTO `tipo` (`id`, `type`, `descricao`) VALUES
+	(3, 'I', 'INATIVOS');
+INSERT INTO `tipo` (`id`, `type`, `descricao`) VALUES
+	(4, 'P', 'PENSIONISTAS');
+/*!40000 ALTER TABLE `tipo` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

@@ -41,6 +41,7 @@ mysqli_close($link);
         <tr>
             <th align='center' bgColor='#666666'><font color='#FFF'>Nome do ramal</th>
             <th align='center' bgColor='#666666'><font color='#FFF'>Ramal</th>
+            <th align='center' bgColor='#666666'><font color='#FFF'>Local</th>
             <th width ="60" align='center' bgColor='#666666'><font color='#FFF'>Ação</th>
             </tr>
         </thead>
@@ -50,6 +51,7 @@ mysqli_close($link);
         <tr>
             <th align='center' valign='middle' bgColor='#DDDDDD'>Nome do ramal</th>
             <th align='center' valign='middle' bgColor='#DDDDDD'>Ramal</th>
+            <th align='center' valign='middle' bgColor='#DDDDDD'>Local</th>
             <th align='center' valign='middle' bgColor='#DDDDDD'>Ação</th>
             </tr>
         </tfoot>

@@ -25,8 +25,8 @@ require_once "../config/init.php";
 
 $id = $_GET["id"];
 
-$sql = "UPDATE `contacts` SET `name` = '".$_POST["txtNome"]."', `phone` = '".$_POST["txtTel"]."', `cel01` = '".$_POST["txtCel"]."',`cel02` = '".$_POST["txtRec"]."',`email` = '".$_POST["txtEmail"]."',`obs` = '".$_POST["txtDescricao"]."' WHERE `id` = ".$id."";
-		
+$sql = "UPDATE `contacts` SET `name` = '".$_POST["txtNome"]."', `phone` = '".$_POST["txtTel1"]."',`phone2` = '".$_POST["txtTel2"]."',`rec` = '".$_POST["txtRec"]."',`email` = '".$_POST["txtEmail"]."',`obs` = '".$_POST["txtObservacao"]."', `type` = '".$_POST["txtTipo"]."' WHERE `id` = ".$id."";		
+
 if (mysqli_query($link, $sql)) {
     
 echo"<script>

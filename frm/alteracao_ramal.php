@@ -27,6 +27,15 @@ require_once "../config/init.php";
 
 $sql_query = mysqli_query($link,"SELECT * FROM phonext WHERE id = '".$id."'");
 
+$sql2_query = mysqli_query($link,"SELECT * FROM local");
+
+$sql3_query = mysqli_query($link,"SELECT p.local FROM phonext p WHERE id = '".$id."'");
+
+$row = mysqli_fetch_array($sql3_query);
+
+$local = $row["local"];
+
+
 //Fecha a conexão com o servidor para poupar recursos de processamento
 mysqli_close($link);
 ?>
@@ -53,6 +62,29 @@ mysqli_close($link);
   <div class="col-md-5">
   <input id="txtRamal" name="txtRamal" type="text" value="<?php echo $linha["ramal"] ?>" placeholder="Digite o número do ramal" class="inputUnico form-control input-md" required="" maxlength="5" >
   </div>
+</div>
+
+
+<div class="form-group" >
+  <label class="col-md-4 control-label" for="txtLocal">Local</label>  
+  <div class="col-md-5">
+    <select name="txtLocal" id="txtLocal" class="form-control">
+  <?php 
+      while ($array = mysqli_fetch_array($sql2_query)) { 
+       
+       $select = $local == $array["local"] ? "selected" : "";
+
+       if ($array["local"]=='O') $local2 = "OMSS";
+       if ($array["local"]=='P') $local2 = "PREFEITURA";
+       if ($array["local"]=='C') $local2 = "CAMARA MUNICIPAL";
+                   
+      ?>
+      <?php
+      echo "<option value=\"". $array["local"] . "\" $select>" . $local2 . "</option>";
+      ?>     
+      <?php } ?>
+      </select>
+    </div>
 </div>
 
 <!-- Button (Double) -->
